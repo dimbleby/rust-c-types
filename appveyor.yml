@@ -1,0 +1,19 @@
+environment:
+  VisualStudioVersion: 12.0
+  matrix:
+  - TARGET: x86_64-pc-windows-msvc
+    VCVARS: '"c:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"'
+  - TARGET: i686-pc-windows-msvc
+    VCVARS: '"c:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"'
+install:
+  - ps: Start-FileDownload "https://static.rust-lang.org/dist/rust-nightly-${env:TARGET}.exe"
+  - rust-nightly-%TARGET%.exe /VERYSILENT /NORESTART /DIR="C:\Program Files (x86)\Rust"
+  - call %VCVARS%
+  - SET PATH=%PATH%;C:\Program Files (x86)\Rust\bin
+  - rustc -V
+  - cargo -V
+
+build: false
+
+test_script:
+  - cargo build
