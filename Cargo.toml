@@ -1,0 +1,17 @@
+[package]
+name = "c-types"
+license = "MIT"
+version = "0.1.0"
+authors = ["David Hotham"]
+description = """
+Re-exports of cross-platform types, gathered from libc and winapi
+"""
+homepage = "https://github.com/dimbleby/rust-c-types"
+repository = "https://github.com/dimbleby/rust-c-types"
+documentation = "http://dimbleby.github.io/rust-c-types"
+readme = "README.md"
+keywords = ["libc", "winapi"]
+
+[dependencies]
+libc = "*"
+winapi = "*"
