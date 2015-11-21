@@ -1,0 +1,15 @@
+language: rust
+sudo: false
+os:
+- linux
+- osx
+rust:
+- nightly
+- beta
+- stable
+script:
+- cargo build
+- cargo doc --no-deps -p c-types
+branches:
+  only:
+    master
