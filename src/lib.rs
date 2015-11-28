@@ -2,7 +2,7 @@
 //!
 //! Stop having to write code like this:
 //!
-//! ```
+//! ```ignore
 //! #[cfg(unix)]
 //! use libc::some_type;
 //!
@@ -12,7 +12,7 @@
 //!
 //! Instead, write code like this:
 //!
-//! ```
+//! ```ignore
 //! use c_types::some_type;
 //! ```
 #![allow(non_camel_case_types)]
