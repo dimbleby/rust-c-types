@@ -22,18 +22,7 @@ mod unix {
   extern crate libc;
 
   pub type fd_set = libc::fd_set;
-
-  #[repr(C)]
-  #[derive(Debug)]
-  #[allow(raw_pointer_derive)]
-  pub struct hostent {
-      pub h_name: *mut libc::c_char,
-      pub h_aliases: *mut *mut libc::c_char,
-      pub h_addrtype: libc::c_int,
-      pub h_length: libc::c_int,
-      pub h_addr_list: *mut *mut libc::c_char,
-  }
-
+  pub type hostent = libc::hostent;
   pub type in_addr = libc::in_addr;
   pub type in6_addr = libc::in6_addr;
   pub type sa_family_t = libc::sa_family_t;
