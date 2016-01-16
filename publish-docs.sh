@@ -1,6 +1,6 @@
 #!/bin/bash
 
-openssl aes-256-cbc -K $encrypted_7f3527787a94_key -iv $encrypted_7f3527787a94_iv -in publish-key.enc -out ~/.ssh/publish-key -d
+openssl aes-256-cbc -K "$encrypted_7f3527787a94_key" -iv "$encrypted_7f3527787a94_iv" -in publish-key.enc -out ~/.ssh/publish-key -d
 chmod u=rw,og= ~/.ssh/publish-key
 echo "Host github.com" >> ~/.ssh/config
 echo "  IdentityFile ~/.ssh/publish-key" >> ~/.ssh/config
