@@ -1,7 +1,7 @@
 [package]
 name = "c-types"
 license = "MIT"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["David Hotham"]
 description = """
 Re-exports of cross-platform types, gathered from libc and winapi
@@ -13,7 +13,7 @@ readme = "README.md"
 keywords = ["libc", "winapi"]
 
 [target.'cfg(unix)'.dependencies]
-libc = "*"
+libc = "0.2"
 
 [target.'cfg(windows)'.dependencies]
-winapi = "*"
+winapi = "0.2"
