@@ -31,12 +31,14 @@ mod unix {
   pub type sockaddr_in = libc::sockaddr_in;
   pub type sockaddr_in6 = libc::sockaddr_in6;
   pub type socklen_t = libc::socklen_t;
+
   pub const AF_INET: i32 = libc::AF_INET;
   pub const AF_INET6: i32 = libc::AF_INET6;
 }
 
 #[cfg(windows)]
 mod windows {
+  extern crate libc;
   extern crate winapi;
 
   pub type fd_set = winapi::fd_set;
