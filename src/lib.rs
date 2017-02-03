@@ -25,12 +25,12 @@ mod unix {
   pub type hostent = libc::hostent;
   pub type in_addr = libc::in_addr;
   pub type in6_addr = libc::in6_addr;
+  pub type iovec = libc::iovec;
   pub type sa_family_t = libc::sa_family_t;
   pub type sockaddr = libc::sockaddr;
   pub type sockaddr_in = libc::sockaddr_in;
   pub type sockaddr_in6 = libc::sockaddr_in6;
   pub type socklen_t = libc::socklen_t;
-
   pub const AF_INET: i32 = libc::AF_INET;
   pub const AF_INET6: i32 = libc::AF_INET6;
 }
@@ -43,6 +43,11 @@ mod windows {
   pub type hostent = winapi::winsock2::hostent;
   pub type in_addr = winapi::in_addr;
   pub type in6_addr = winapi::in6_addr;
+  #[repr(C)]
+  pub struct iovec {
+      pub iov_base: *mut libc::c_void,
+      pub iov_len: libc::size_t,
+  }
   pub type sa_family_t = winapi::ws2def::ADDRESS_FAMILY;
   pub type sockaddr = winapi::SOCKADDR;
   pub type sockaddr_in = winapi::ws2def::SOCKADDR_IN;
