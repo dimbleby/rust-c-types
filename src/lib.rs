@@ -32,6 +32,7 @@ mod unix {
   pub type sockaddr_in6 = libc::sockaddr_in6;
   pub type socklen_t = libc::socklen_t;
 
+  pub const AF_UNSPEC: i32 = libc::AF_UNSPEC;
   pub const AF_INET: i32 = libc::AF_INET;
   pub const AF_INET6: i32 = libc::AF_INET6;
 }
@@ -56,6 +57,7 @@ mod windows {
   pub type sockaddr_in6 = winapi::ws2ipdef::sockaddr_in6;
   pub type socklen_t = winapi::socklen_t;
 
+  pub const AF_UNSPEC: i32 = winapi::ws2def::AF_UNSPEC;
   pub const AF_INET: i32 = winapi::ws2def::AF_INET;
   pub const AF_INET6: i32 = winapi::ws2def::AF_INET6;
 }
