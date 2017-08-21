@@ -23,21 +23,6 @@ use c_types::some_type;
 
 API documentation is [here](http://dimbleby.github.io/rust-c-types).
 
-## Installation ##
-
-To use `c-types`, add this to your `Cargo.toml`:
-
-```toml
-[dependencies]
-c-types = "*"
-```
-
-And add this to your crate root:
-
-```rust
-extern crate c_types;
-```
-
 ## Contributing ##
 
 This crate is non-exhaustive - I add types to it as and when I need them for my own projects.
