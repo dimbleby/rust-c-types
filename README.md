@@ -21,7 +21,7 @@ use c_types::some_type;
 
 ## Documentation ##
 
-API documentation is [here](http://dimbleby.github.io/rust-c-types).
+API documentation is [here](https://docs.rs/c-types).
 
 ## Contributing ##
 

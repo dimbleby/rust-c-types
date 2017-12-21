@@ -12,8 +12,3 @@ script:
 branches:
   only:
     master
-after_success: |
-  [ $TRAVIS_PULL_REQUEST == "false" ] &&
-  [ $TRAVIS_RUST_VERSION == "stable" ] &&
-  [ $TRAVIS_OS_NAME == "linux" ] &&
-  bash ./publish-docs.sh
