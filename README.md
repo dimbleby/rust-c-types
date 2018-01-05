@@ -17,7 +17,7 @@ use c_types::some_type;
 
 [![Build Status](https://travis-ci.org/dimbleby/rust-c-types.svg?branch=master)](https://travis-ci.org/dimbleby/rust-c-types)
 [![Build status](https://ci.appveyor.com/api/projects/status/lg8k62ahyks2u681/branch/master?svg=true)](https://ci.appveyor.com/project/dimbleby/rust-c-types/branch/master)
-[![crates.io](http://meritbadge.herokuapp.com/c-types)](https://crates.io/crates/c-types)
+[![crates.io](https://meritbadge.herokuapp.com/c-types)](https://crates.io/crates/c-types)
 
 ## Documentation ##
 
