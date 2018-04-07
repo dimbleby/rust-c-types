@@ -9,6 +9,8 @@ rust:
 - stable
 script:
 - cargo build
+- if [ "$TRAVIS_RUST_VERSION" == "nightly" ]; then cargo update -Z minimal-versions; fi
+- if [ "$TRAVIS_RUST_VERSION" == "nightly" ]; then cargo build; fi
 branches:
   only:
     master
