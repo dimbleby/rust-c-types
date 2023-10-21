@@ -32,34 +32,36 @@ mod unix {
     pub type sockaddr_in6 = libc::sockaddr_in6;
     pub type socklen_t = libc::socklen_t;
 
-    pub const AF_UNSPEC: i32 = libc::AF_UNSPEC;
-    pub const AF_INET: i32 = libc::AF_INET;
-    pub const AF_INET6: i32 = libc::AF_INET6;
+    pub type ADDRESS_FAMILY = libc::c_int;
+    pub const AF_UNSPEC: ADDRESS_FAMILY = libc::AF_UNSPEC;
+    pub const AF_INET: ADDRESS_FAMILY = libc::AF_INET;
+    pub const AF_INET6: ADDRESS_FAMILY = libc::AF_INET6;
 }
 
 #[cfg(windows)]
 mod windows {
     extern crate libc;
-    extern crate winapi;
+    extern crate windows_sys;
 
-    pub type fd_set = winapi::um::winsock2::fd_set;
-    pub type hostent = winapi::um::winsock2::hostent;
-    pub type in_addr = winapi::shared::inaddr::in_addr;
-    pub type in6_addr = winapi::shared::in6addr::in6_addr;
+    pub type fd_set = windows_sys::Win32::Networking::WinSock::FD_SET;
+    pub type hostent = windows_sys::Win32::Networking::WinSock::HOSTENT;
+    pub type in_addr = windows_sys::Win32::Networking::WinSock::IN_ADDR;
+    pub type in6_addr = windows_sys::Win32::Networking::WinSock::IN6_ADDR;
     #[repr(C)]
     pub struct iovec {
         pub iov_base: *mut libc::c_void,
         pub iov_len: libc::size_t,
     }
-    pub type sa_family_t = winapi::shared::ws2def::ADDRESS_FAMILY;
-    pub type sockaddr = winapi::shared::ws2def::SOCKADDR;
-    pub type sockaddr_in = winapi::shared::ws2def::SOCKADDR_IN;
-    pub type sockaddr_in6 = winapi::shared::ws2ipdef::SOCKADDR_IN6_LH;
-    pub type socklen_t = winapi::um::ws2tcpip::socklen_t;
+    pub type sa_family_t = windows_sys::Win32::Networking::WinSock::sa_family_t;
+    pub type sockaddr = windows_sys::Win32::Networking::WinSock::SOCKADDR;
+    pub type sockaddr_in = windows_sys::Win32::Networking::WinSock::SOCKADDR_IN;
+    pub type sockaddr_in6 = windows_sys::Win32::Networking::WinSock::SOCKADDR_IN6;
+    pub type socklen_t = windows_sys::Win32::Networking::WinSock::socklen_t;
 
-    pub const AF_UNSPEC: i32 = winapi::shared::ws2def::AF_UNSPEC;
-    pub const AF_INET: i32 = winapi::shared::ws2def::AF_INET;
-    pub const AF_INET6: i32 = winapi::shared::ws2def::AF_INET6;
+    pub type ADDRESS_FAMILY = windows_sys::Win32::Networking::WinSock::ADDRESS_FAMILY;
+    pub const AF_UNSPEC: ADDRESS_FAMILY = windows_sys::Win32::Networking::WinSock::AF_UNSPEC;
+    pub const AF_INET: ADDRESS_FAMILY = windows_sys::Win32::Networking::WinSock::AF_INET;
+    pub const AF_INET6: ADDRESS_FAMILY = windows_sys::Win32::Networking::WinSock::AF_INET6;
 }
 
 #[cfg(unix)]

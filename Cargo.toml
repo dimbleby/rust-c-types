@@ -1,7 +1,7 @@
 [package]
 name = "c-types"
 license = "MIT"
-version = "2.0.2"
+version = "3.0.0"
 authors = ["David Hotham"]
 description = """
 Re-exports of cross-platform types, gathered from libc and winapi
@@ -15,4 +15,4 @@ keywords = ["libc", "winapi"]
 libc = "0.2.21"
 
 [target.'cfg(windows)'.dependencies]
-winapi = { version = "0.3.3", features = ["winsock2", "ws2ipdef", "ws2tcpip"] }
+windows-sys = { version = "0.48.0", features = ["Win32_Networking_WinSock"] }
