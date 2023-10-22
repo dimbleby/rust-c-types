@@ -15,9 +15,13 @@ Instead, write code like this:
 use c_types::some_type;
 ```
 
-[![Build Status](https://travis-ci.org/dimbleby/rust-c-types.svg?branch=master)](https://travis-ci.org/dimbleby/rust-c-types)
-[![Build status](https://ci.appveyor.com/api/projects/status/lg8k62ahyks2u681/branch/master?svg=true)](https://ci.appveyor.com/project/dimbleby/rust-c-types/branch/master)
-[![crates.io](https://meritbadge.herokuapp.com/c-types)](https://crates.io/crates/c-types)
+[![Crates.io][crates-badge]][crates-url]
+[![Build Status][actions-badge]][actions-url]
+
+[crates-badge]: https://img.shields.io/crates/v/c-types.svg
+[crates-url]: https://crates.io/crates/c-types
+[actions-badge]: https://github.com/dimbleby/rust-c-types/actions/workflows/build.yml/badge.svg
+[actions-url]: https://github.com/dimbleby/rust-c-types/actions?query=workflow%3ACI+branch%3Amain
 
 ## Documentation ##
 
