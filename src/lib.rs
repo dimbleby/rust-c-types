@@ -52,7 +52,7 @@ mod windows {
         pub iov_base: *mut libc::c_void,
         pub iov_len: libc::size_t,
     }
-    pub type sa_family_t = windows_sys::Win32::Networking::WinSock::sa_family_t;
+    pub type sa_family_t = windows_sys::Win32::Networking::WinSock::ADDRESS_FAMILY;
     pub type sockaddr = windows_sys::Win32::Networking::WinSock::SOCKADDR;
     pub type sockaddr_in = windows_sys::Win32::Networking::WinSock::SOCKADDR_IN;
     pub type sockaddr_in6 = windows_sys::Win32::Networking::WinSock::SOCKADDR_IN6;
