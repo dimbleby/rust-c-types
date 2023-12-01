@@ -1,3 +1,9 @@
+# Changelog
+
+## 3.0.1 (1 December 2023)
+
+- update windows-sys, fix `sa_family_t` on windows
+
 ## 3.0.0 (21 October 2023)
 
 - Switch from `winapi` to `windows-sys`
