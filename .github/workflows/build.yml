@@ -1,20 +1,28 @@
 name: CI
-
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
   schedule:
-    - cron: "0 3 1 * *"
-
+    - cron: 0 3 1 * *
+  workflow_dispatch:
 jobs:
   test:
     name: Test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        build: [x86_64, x86_64-beta, x86_64-nightly, i686, macos, win64, win32]
+        build:
+          - x86_64
+          - x86_64-beta
+          - x86_64-nightly
+          - i686
+          - macos
+          - win64
+          - win32
         include:
           - build: x86_64
             os: ubuntu-latest
@@ -50,9 +58,12 @@ jobs:
         run: rustup update ${{ matrix.rust }} --no-self-update && rustup default ${{ matrix.rust }}
         shell: bash
       - run: rustup target add ${{ matrix.target }}
+      - run: rustup component add clippy
       - run: cargo fmt -- --check
         if: matrix.build == 'x86_64'
         name: Check formatting
+      - run: cargo clippy -- -D warnings
+        name: Run clippy
       - run: cargo build
         name: Build
       - run: cargo test
