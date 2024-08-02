@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.2 (2 August 2024)
+
+- update windows-sys
+
 ## 3.0.1 (1 December 2023)
 
 - update windows-sys, fix `sa_family_t` on windows
