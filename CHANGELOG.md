@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0 (2 August 2024)
+
+- re-publish 3.0.2, updating windows-sys is breaking
+
 ## 3.0.2 (2 August 2024)
 
 - update windows-sys
