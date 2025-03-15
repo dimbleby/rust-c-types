@@ -9,7 +9,7 @@ Re-exports of cross-platform types, gathered from libc and winapi
 repository = "https://github.com/dimbleby/rust-c-types"
 documentation = "https://docs.rs/c-types"
 readme = "README.md"
-edition = "2021"
+edition = "2024"
 keywords = ["libc", "winapi"]
 
 [dependencies]
