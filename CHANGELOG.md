@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.0 (11 Jun 2025)
+
+- update windows-sys
+
 ## 4.0.0 (2 August 2024)
 
 - re-publish 3.0.2, updating windows-sys is breaking
